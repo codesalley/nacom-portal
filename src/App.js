@@ -4,20 +4,23 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Message from './components/Messages';
 import Result from './components/Result';
+import Announcements from './components/Announcement';
 
 function App() {
   return (
     <Router>
-      <NavBar />
       <Switch>
-        <Route exact path='/'>
+        <Route path='/login'>
           <LoginPage />
         </Route>
+        <Route exact path='/'>
+          <Announcements data={<NavBar />} />
+        </Route>
         <Route path='/messages'>
-          <Message />
+          <Message data={<NavBar />} />
         </Route>
         <Route path='/result'>
-          <Result />
+          <Result data={<NavBar />} />
         </Route>
       </Switch>
     </Router>

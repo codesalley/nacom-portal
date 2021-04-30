@@ -1,5 +1,10 @@
-const Message = () => {
-  return <h3>Message tab</h3>;
+const Message = ({ data }) => {
+  return (
+    <div>
+      {data}
+      <h2>Messages</h2>
+    </div>
+  );
 };
 
 export default Message;

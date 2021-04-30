@@ -1,5 +1,5 @@
-const auth = (token) => {};
+import auth from '../utils/auth';
 
 export default function SecureRoute({ children }) {
-  const token = localStorage.getItem('x-token');
+  const user = auth();
 }
