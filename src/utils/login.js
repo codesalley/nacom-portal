@@ -1,13 +1,25 @@
-import axios from 'axios';
+const login = async (indexNumber, password) => {
+  try {
+    const data = await fetch('https://nacomtest.herokuapp.com/student', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
 
-const login = async () => {
-  const data = await axios
-    .get('https://nacomtest.herokuapp.com/', {
-      index_number: '080062021A',
-      password: 'testtest',
-    })
-    .then((res) => res);
-  console.log(data);
+      body: JSON.stringify({
+        index_number: indexNumber,
+        password: password,
+      }),
+    });
+    const token = await data.json();
+    console.log(token);
+    if (token) {
+      localStorage.setItem('x-token', JSON.stringify(token));
+      return true;
+    }
+    return false;
+  } catch (error) {}
 };
 
 export { login };

@@ -1,6 +1,8 @@
 import Logo from '../assets/logo.png';
 
 export default function LoginPage() {
+  function submitHandler(e) {}
+
   return (
     <div className='w-2/3 mx-auto'>
       <img src={Logo} className='main-logo' />

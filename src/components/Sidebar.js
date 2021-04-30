@@ -1,6 +1,4 @@
 export default function Sidebar({ data }) {
-  console.log(data);
-  console.log('data');
   return (
     <div>
       <button onClick={data}>close </button>
