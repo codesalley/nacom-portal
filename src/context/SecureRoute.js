@@ -4,14 +4,12 @@ import { Redirect, Route } from 'react-router-dom';
 export default function SecureRoute({ component: Component, ...rest }) {
   const { student } = useAuthContext();
 
-  return student ? (
+  return (
     <Route
       {...rest}
       render={(props) => {
-        <Component {...props} />;
+        student ? <Component {...props} /> : <Redirect to='/login' />;
       }}
     />
-  ) : (
-    <Redirect to='/login' />
   );
 }

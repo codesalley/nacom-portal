@@ -39,8 +39,8 @@ const NavBar = () => {
           <Sidebar data={toggledState} />
         </div>
       )}
-      <div>Logo </div>
-      <div>Profile</div>
+      <div className='p-2 font-semibold text-xl'>General Announcements </div>
+      <div className='p-2'>Logout</div>
     </div>
   );
 };

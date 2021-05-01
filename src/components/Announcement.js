@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
+import Skenton from './skenton';
 
 const Announcements = ({ data }) => {
   const url = 'https://nacomtest.herokuapp.com/announce';
@@ -18,15 +19,14 @@ const Announcements = ({ data }) => {
   }, []);
 
   return (
-    <div className='bg-red-200'>
+    <div className='bg-white'>
       {data}
       {loading ? (
-        <div> loading </div>
-      ) : (
-        <div>
-          <h2>Announcementse</h2>
-          <Link to='/login'>Login</Link>
+        <div className='flex flex-col bg-gray-200 h-screen'>
+          <Skenton />
         </div>
+      ) : (
+        <div className='bg-gray-200 h-screen overflow-scroll'></div>
       )}
     </div>
   );
