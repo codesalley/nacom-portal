@@ -20,7 +20,6 @@ export function AuthProvider({ children }) {
     setStudent(profiledata);
     return profiledata;
   }
-  console.log(student);
 
   const value = {
     student,
