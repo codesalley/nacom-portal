@@ -11,10 +11,7 @@ const auth = async (url) => {
     },
   })
     .then((e) => e)
-    .then((e) => e.json())
-    .catch(() => {
-      return false;
-    });
+    .then((e) => e.json());
 
   const data = await response;
 
