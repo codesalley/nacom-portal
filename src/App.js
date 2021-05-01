@@ -16,13 +16,13 @@ function App() {
           <Route path='/login' component={LoginPage} />
 
           <SecureRoute exact path='/'>
-            <Announcements data={<NavBar />} />
+            <Announcements data={<NavBar data={'General Announcements '} />} />
           </SecureRoute>
           <SecureRoute path='/messages'>
-            <Message data={<NavBar />} />
+            <Message data={<NavBar data={'Messages '} />} />
           </SecureRoute>
           <SecureRoute path='/result'>
-            <Result data={<NavBar />} />
+            <Result data={<NavBar data={'Results '} />} />
           </SecureRoute>
         </Switch>
       </Router>

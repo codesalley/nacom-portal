@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Sidebar from './Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBar = () => {
+const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
 
   function toggledState() {
@@ -39,7 +39,7 @@ const NavBar = () => {
           <Sidebar data={toggledState} />
         </div>
       )}
-      <div className='p-2 font-semibold text-xl'>General Announcements </div>
+      <div className='p-2 font-semibold text-xl'>{data}</div>
       <div className='p-2'>Logout</div>
     </div>
   );
