@@ -15,13 +15,15 @@ function App() {
         <Switch>
           <Route path='/login' component={LoginPage} />
 
-          <SecureRoute exact path='/' component={Announcements} />
-          <Route path='/messages'>
-            <Message />
-          </Route>
-          <Route path='/result'>
-            <Result />
-          </Route>
+          <SecureRoute exact path='/'>
+            <Announcements data={<NavBar />} />
+          </SecureRoute>
+          <SecureRoute path='/messages'>
+            <Message data={<NavBar />} />
+          </SecureRoute>
+          <SecureRoute path='/result'>
+            <Result data={<NavBar />} />
+          </SecureRoute>
         </Switch>
       </Router>
     </AuthProvider>

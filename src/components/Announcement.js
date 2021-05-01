@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 
-const Announcements = () => {
+const Announcements = ({ data }) => {
   const url = 'https://nacomtest.herokuapp.com/announce';
   const [loading, setLoading] = useState(true);
   const [pageData, setPagedata] = useState();
@@ -19,6 +19,7 @@ const Announcements = () => {
 
   return (
     <div className='bg-red-200'>
+      {data}
       {loading ? (
         <div> loading </div>
       ) : (
