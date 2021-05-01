@@ -1,15 +1,17 @@
 import { useAuthContext } from './AuthContext';
 import { Redirect, Route } from 'react-router-dom';
-import LoginPage from '../components/LoginPage';
 
 export default function SecureRoute({ component: Component, ...rest }) {
   const { student } = useAuthContext();
-  return (
+
+  return student ? (
     <Route
       {...rest}
       render={(props) => {
-        return student ? <Component {...props} /> : <Redirect to='/login' />;
+        <Component {...props} />;
       }}
-    ></Route>
+    />
+  ) : (
+    <Redirect to='/login' />
   );
 }

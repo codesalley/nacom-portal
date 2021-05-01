@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import auth from '../utils/auth';
 
-const Message = () => {
+const Message = ({ data }) => {
   const [pageData, setPagedata] = useState();
   const [loading, setLoading] = useState(true);
   const url = 'https://nacomtest.herokuapp.com/message';
@@ -21,6 +21,7 @@ const Message = () => {
 
   return (
     <div>
+      {data}
       <h2>Messages</h2>
     </div>
   );
