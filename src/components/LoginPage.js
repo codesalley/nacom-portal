@@ -1,15 +1,15 @@
 import Logo from '../assets/logo.png';
-import { useRef, useState } from 'react';
-import { login } from '../utils/login';
-import auth from '../utils/auth';
+import { useRef, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useAuthContext } from '../context/AuthContext';
 
 export default function LoginPage() {
   const indext_number = useRef();
   const password = useRef();
   const [errorVal, seterrorVal] = useState();
   const [submit, setSubmit] = useState(false);
-  const [studentData, setStudentData] = useState();
-  const [announcement, setAnnouncement] = useState();
+  const { signIn } = useAuthContext();
+  const histroy = useHistory();
 
   async function submitHandler(e) {
     e.preventDefault();
@@ -17,15 +17,13 @@ export default function LoginPage() {
     const student_index = indext_number.current.value;
     const student_password = password.current.value;
     if (student_index && student_password) {
-      const res = await login(student_index, student_password);
-      console.log(res);
+      const res = await signIn(student_index, student_password);
       if (res === false) {
         seterrorVal('invalid credentails');
         setSubmit(false);
         return;
       }
-      const profiledata = await auth('https://nacomtest.herokuapp.com/me');
-      const annnouncement = await auth('https://nacomtest.herokuapp.com/me');
+      histroy.push('/');
     }
     setSubmit(false);
   }

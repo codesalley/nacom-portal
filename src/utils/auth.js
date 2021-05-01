@@ -9,10 +9,15 @@ const auth = async (url) => {
       'Content-Type': 'application/json',
       token: token.token,
     },
-  });
+  })
+    .then((e) => e)
+    .then((e) => e.json())
+    .catch(() => {
+      return false;
+    });
 
-  console.log(response.json());
-  const data = response.json();
+  const data = await response;
+
   return data;
 };
 
