@@ -16,9 +16,9 @@ export default function Sidebar({ data }) {
     setloading(false);
   }
 
-  console.log(student);
   useEffect(() => {
     getMe();
+    return getMe();
   }, []);
 
   return loading ? (

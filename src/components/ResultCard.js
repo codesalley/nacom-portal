@@ -9,7 +9,6 @@ Modal.setAppElement('#modal');
 const ResultCard = ({ data }) => {
   const [ismodal, setModal] = useState(false);
 
-  console.log(data);
   if (data.msg) {
     return <Redirect to='/login' />;
   }

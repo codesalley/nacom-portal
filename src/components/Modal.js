@@ -1,5 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import AuthContext from '../context/AuthContext';
 const ModalData = ({ data }) => {
+  const [pageData, setPagedata] = useState();
+
   useEffect(() => {
     console.log('dhow');
   }, []);

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Skenton from './skenton';
 import Card from './Card';
+import { Redirect } from 'react-router-dom';
 import './announcement.css';
 
 const Announcements = ({ data }) => {
@@ -14,6 +15,9 @@ const Announcements = ({ data }) => {
     setPagedata(data);
     setLoading(false);
   };
+  if (data.msg) {
+    <Redirect to='/login' />;
+  }
 
   useEffect(() => {
     getAnnouncements();
