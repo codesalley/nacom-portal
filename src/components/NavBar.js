@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAuthContext } from '../context/AuthContext';
 
 const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
+  const { student } = useAuthContext();
 
   function toggledState() {
+    console.log(student);
     setToggledNav((e) => !e);
   }
 
   return (
-    <div className='flex justify-between bg-white'>
+    <div className='flex justify-between bg-white h-20 m-0'>
       <button onClick={toggledState} className='p-2'>
         {' '}
         <svg
@@ -30,16 +32,18 @@ const NavBar = ({ data }) => {
       </button>
       {!toggledNav ? (
         <div
-          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform -translate-x-full transition duration-700 ease-in-out`}
+          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform -translate-x-full transition duration-700 ease-in-out m-0`}
         ></div>
       ) : (
         <div
-          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform transition duration-700 ease-in-out`}
+          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform transition duration-700 ease-in-out m-0`}
         >
           <Sidebar data={toggledState} />
         </div>
       )}
-      <div className='p-2 font-semibold text-xl'>{data}</div>
+      <div className='p-2 font-semibold text-base text-gray-500 self-center'>
+        {data}
+      </div>
       <button className='p-2 font-semibold'>Logout</button>
     </div>
   );

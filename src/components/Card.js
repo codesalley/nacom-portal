@@ -11,7 +11,9 @@ const Card = ({ data }) => {
         <div className='body'>
           <p>{v.title}</p>
           <p>{v.details}</p>
-          <small>{v.created_at}</small>
+          <small className='italic text-gray-400 font-semibold'>
+            {v.created_at.split('T')[0]}
+          </small>
         </div>
       </div>
     );

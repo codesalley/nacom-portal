@@ -21,7 +21,7 @@ const Announcements = ({ data }) => {
   }, []);
 
   return (
-    <div className='bg-white'>
+    <div className='bg-white '>
       {data}
       {loading ? (
         <div className='flex flex-col bg-gray-200 h-screen'>
@@ -33,7 +33,7 @@ const Announcements = ({ data }) => {
           <Skenton />
         </div>
       ) : (
-        <div className='bg-gray-200 h-screen overflow-scroll'>
+        <div className='bg-gray-200 h-screen overflow-scroll '>
           <Card data={pageData} />
         </div>
       )}

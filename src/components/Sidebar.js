@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Logo from '../assets/logo.png';
+import { useAuthContext } from '../context/AuthContext';
 
 export default function Sidebar({ data }) {
   const [loading, setloading] = useState(true);
   const [pagedata, setPagedata] = useState();
   const url = 'https://nacomtest.herokuapp.com/me';
+  const { student } = useAuthContext();
 
   async function getMe() {
     const data = await auth(url);
@@ -14,13 +16,13 @@ export default function Sidebar({ data }) {
     setloading(false);
   }
 
+  console.log(student);
   useEffect(() => {
     getMe();
   }, []);
-  console.log(pagedata);
 
   return loading ? (
-    <div>
+    <div className=''>
       <div className='flex justify-between px-3'>
         <p></p>
         <button onClick={data} className='text-right p-2'>
