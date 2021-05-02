@@ -8,9 +8,9 @@ const NavBar = ({ data }) => {
   function toggledState() {
     setToggledNav((e) => !e);
   }
-  console.log(toggledNav);
+
   return (
-    <div className='flex justify-between relative '>
+    <div className='flex justify-between bg-white'>
       <button onClick={toggledState} className='p-2'>
         {' '}
         <svg
@@ -40,7 +40,7 @@ const NavBar = ({ data }) => {
         </div>
       )}
       <div className='p-2 font-semibold text-xl'>{data}</div>
-      <div className='p-2'>Logout</div>
+      <button className='p-2 font-semibold'>Logout</button>
     </div>
   );
 };

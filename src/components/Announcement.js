@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Skenton from './skenton';
-import nurse from '../assets/pngegg.png';
+import Card from './Card';
 import './announcement.css';
 
 const Announcements = ({ data }) => {
@@ -34,21 +34,7 @@ const Announcements = ({ data }) => {
         </div>
       ) : (
         <div className='bg-gray-200 h-screen overflow-scroll'>
-          {pageData.map((v, i) => {
-            return (
-              <div
-                className='main-card flex gap-3 bg-white rounded p-3 mx-auto mt-2 max-w-sm '
-                key={i}
-              >
-                <img alt='nurse logo' className='nurse-logo' src={nurse} />
-                <div className='body'>
-                  <p>{v.title}</p>
-                  <p>{v.details}</p>
-                  <small>{v.created_at}</small>
-                </div>
-              </div>
-            );
-          })}
+          <Card data={pageData} />
         </div>
       )}
     </div>
