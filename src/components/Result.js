@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import auth from '../utils/auth';
 import ResultCard from './ResultCard';
 import Skenton from './skenton';
@@ -30,10 +31,12 @@ const Result = ({ data }) => {
           <Skenton />
           <Skenton />
         </div>
-      ) : (
+      ) : !pageData.msg ? (
         <div className='bg-gray-200 h-screen pt-2'>
           <ResultCard data={pageData} />
         </div>
+      ) : (
+        <Redirect to='/login' />
       )}
     </div>
   );

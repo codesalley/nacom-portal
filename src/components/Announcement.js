@@ -1,27 +1,24 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Skenton from './skenton';
 import Card from './Card';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import './announcement.css';
 
 const Announcements = ({ data }) => {
   const url = 'https://nacomtest.herokuapp.com/announce';
   const [loading, setLoading] = useState(true);
   const [pageData, setPagedata] = useState();
+  const histroy = useHistory();
   const getAnnouncements = async () => {
     const data = await auth(url);
     setPagedata(data);
     setLoading(false);
   };
-  if (data.msg) {
-    <Redirect to='/login' />;
-  }
 
   useEffect(() => {
     getAnnouncements();
-    return getAnnouncements();
+    return setPagedata();
   }, []);
 
   return (
@@ -36,10 +33,12 @@ const Announcements = ({ data }) => {
           <Skenton />
           <Skenton />
         </div>
-      ) : (
+      ) : !pageData.msg ? (
         <div className='bg-gray-200 h-screen overflow-scroll '>
           <Card data={pageData} />
         </div>
+      ) : (
+        <Redirect to='/login' />
       )}
     </div>
   );

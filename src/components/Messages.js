@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Skenton from './skenton';
 import Card from './Card';
+import { Redirect } from 'react-router-dom';
 
 const Message = ({ data }) => {
   const [pageData, setPagedata] = useState();
@@ -16,11 +17,9 @@ const Message = ({ data }) => {
   useEffect(() => {
     getMessages();
     return () => {
-      getMessages();
+      setPagedata();
     };
   }, []);
-  console.log(pageData);
-  console.log(loading);
 
   return (
     <div>
@@ -34,10 +33,12 @@ const Message = ({ data }) => {
           <Skenton />
           <Skenton />
         </div>
-      ) : (
+      ) : !pageData.msg ? (
         <div className='bg-gray-200 h-screen pt-2'>
           <Card data={pageData} />
         </div>
+      ) : (
+        <Redirect to='login' />
       )}
     </div>
   );
