@@ -31,7 +31,7 @@ export default function LoginPage() {
 
   return (
     <div className='main-page bg-gray-600'>
-      <div className='w-2/3 mx-auto h-screen flex flex-col gap-5   pt-40'>
+      <div className='w-2/3 mx-auto h-screen flex flex-col gap-2 pt-10'>
         <img src={Logo} alt='main-logo' className='main-logo  mx-auto' />
 
         <div className='form-div '>

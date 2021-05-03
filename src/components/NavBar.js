@@ -1,14 +1,21 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
 import { useAuthContext } from '../context/AuthContext';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
   const { student } = useAuthContext();
+  const history = useHistory();
 
   function toggledState() {
     console.log(student);
     setToggledNav((e) => !e);
+  }
+
+  function logout() {
+    localStorage.setItem('x-token', JSON.stringify('invalid'));
+    return history.push('/login');
   }
 
   return (
@@ -44,7 +51,9 @@ const NavBar = ({ data }) => {
       <div className='p-2 font-semibold text-base text-gray-500 self-center'>
         {data}
       </div>
-      <button className='p-2 font-semibold'>Logout</button>
+      <button onClick={logout} className='p-2 font-semibold text-gray-600'>
+        Logout
+      </button>
     </div>
   );
 };
