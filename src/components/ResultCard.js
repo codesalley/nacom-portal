@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
-import { Link, Redirect, Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import ModalData from './Modal';
 import Modal from 'react-modal';
-import { format, toDate } from 'date-fns';
 
 Modal.setAppElement('#modal');
 const ResultCard = ({ data }) => {

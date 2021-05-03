@@ -1,5 +1,5 @@
 import Logo from '../assets/logo.png';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 import './LonginPage.css';
@@ -31,7 +31,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='main-page bg-gray-600 lg:flex'>
+    <div className='main-page bg-gray-600 lg:flex overflow-scroll'>
       <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg p-2 nurse-right'>
         <img
           src={nurseimg}

@@ -2,14 +2,12 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Logo from '../assets/logo.png';
-import { useAuthContext } from '../context/AuthContext';
 import './sidebar.css';
 
 export default function Sidebar({ data }) {
   const [loading, setloading] = useState(true);
   const [pagedata, setPagedata] = useState();
   const url = 'https://nacomtest.herokuapp.com/me';
-  const { student } = useAuthContext();
 
   async function getMe() {
     const data = await auth(url);

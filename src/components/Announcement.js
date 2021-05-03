@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Skenton from './skenton';
 import Card from './Card';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './announcement.css';
 
 const Announcements = ({ data }) => {
   const url = 'https://nacomtest.herokuapp.com/announce';
   const [loading, setLoading] = useState(true);
   const [pageData, setPagedata] = useState();
-  const histroy = useHistory();
+
   const getAnnouncements = async () => {
     const data = await auth(url);
     setPagedata(data);
