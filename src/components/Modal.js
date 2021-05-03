@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../utils/auth';
-import { useAuthContext } from '../context/AuthContext';
 import passport from '../assets/passport.png';
 import './modal.css';
 
 const ModalData = ({ data }) => {
-  const { student } = useAuthContext();
   const url = 'https://nacomtest.herokuapp.com/me';
   const [pageData, setPageData] = useState();
   const [loading, setLoading] = useState(true);
