@@ -4,23 +4,29 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Message from './components/Messages';
 import Result from './components/Result';
+import Announcements from './components/Announcement';
+import { AuthProvider } from './context/AuthContext';
+import SecureRoute from './context/SecureRoute';
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path='/'>
-          <LoginPage />
-        </Route>
-        <Route path='/messages'>
-          <Message />
-        </Route>
-        <Route path='/result'>
-          <Result />
-        </Route>
-      </Switch>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Switch>
+          <Route path='/login' component={LoginPage} />
+
+          <SecureRoute exact path='/'>
+            <Announcements data={<NavBar data={'General Announcements '} />} />
+          </SecureRoute>
+          <SecureRoute path='/messages'>
+            <Message data={<NavBar data={'Messages '} />} />
+          </SecureRoute>
+          <SecureRoute path='/result'>
+            <Result data={<NavBar data={'Results '} />} />
+          </SecureRoute>
+        </Switch>
+      </Router>
+    </AuthProvider>
   );
 }
 

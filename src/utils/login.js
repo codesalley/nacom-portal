@@ -13,7 +13,9 @@ const login = async (indexNumber, password) => {
       }),
     });
     const token = await data.json();
-    console.log(token);
+    if (token.msg === 'invalid credentials') {
+      return false;
+    }
     if (token) {
       localStorage.setItem('x-token', JSON.stringify(token));
       return true;
