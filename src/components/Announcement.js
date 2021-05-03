@@ -33,7 +33,7 @@ const Announcements = ({ data }) => {
           <Skenton />
           <Skenton />
         </div>
-      ) : !pageData.msg ? (
+      ) : pageData && !pageData.msg ? (
         <div className='bg-gray-200 h-screen overflow-scroll '>
           <Card data={pageData} />
         </div>

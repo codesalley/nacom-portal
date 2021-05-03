@@ -13,11 +13,10 @@ function App() {
     <AuthProvider>
       <Router>
         <Switch>
-          <Route path='/login' component={LoginPage} />
-
           <SecureRoute exact path='/'>
             <Announcements data={<NavBar data={'General Announcements '} />} />
           </SecureRoute>
+          <Route path='/login' component={LoginPage} />
           <SecureRoute path='/messages'>
             <Message data={<NavBar data={'Messages '} />} />
           </SecureRoute>

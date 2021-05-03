@@ -31,7 +31,7 @@ const Result = ({ data }) => {
           <Skenton />
           <Skenton />
         </div>
-      ) : !pageData.msg ? (
+      ) : pageData && !pageData.msg ? (
         <div className='bg-gray-200 h-screen pt-2'>
           <ResultCard data={pageData} />
         </div>
