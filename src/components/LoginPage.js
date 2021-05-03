@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 import './LonginPage.css';
+import nurseimg from '../assets/nurse.png';
 
 export default function LoginPage() {
   const indext_number = useRef();
@@ -30,11 +31,18 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='main-page bg-gray-600'>
-      <div className='w-2/3 mx-auto h-screen flex flex-col gap-2 pt-10'>
+    <div className='main-page bg-gray-600 lg:flex'>
+      <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg p-2 nurse-right'>
+        <img
+          src={nurseimg}
+          alt='left'
+          className='object-cover h-full rounded-lg'
+        />
+      </div>
+      <div className='w-2/3 mx-auto h-screen flex flex-col gap-2 pt-10 lg:w-2/4 lg:py-40'>
         <img src={Logo} alt='main-logo' className='main-logo  mx-auto' />
 
-        <div className='form-div '>
+        <div className='form-div lg:w-2/4 lg:mx-auto'>
           <p className='form-error text-center text-red-200 border-gray-100 p-2 rounded transform transition-all duration-700'>
             {' '}
             {errorVal}{' '}

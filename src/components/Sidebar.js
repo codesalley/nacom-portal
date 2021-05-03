@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import Logo from '../assets/logo.png';
 import { useAuthContext } from '../context/AuthContext';
+import './sidebar.css';
 
 export default function Sidebar({ data }) {
   const [loading, setloading] = useState(true);
@@ -55,7 +56,7 @@ export default function Sidebar({ data }) {
       </div>
     </div>
   ) : (
-    <div className='transition duration-700 ease-in-out px-2 flex flex-col absolute overflow-hidden gap-2'>
+    <div className='transition duration-700 ease-in-out px-2 flex flex-col absolute h-full overflow-hidden gap-1'>
       <div className='flex justify-between px-3'>
         <p></p>
         <button onClick={data} className='text-right p-2 '>
@@ -80,21 +81,27 @@ export default function Sidebar({ data }) {
           src={Logo}
         />
       </div>
-      <div className='name flex justify-center gap-3 subpixel-antialiased'>
-        <p className='font-bold text-xl'>{pagedata.first_name}</p>
-        <p className='font-bold text-xl'>{pagedata.middle_name}</p>
-        <p className='font-bold text-xl'>{pagedata.last_name}</p>
+      <div className='name flex justify-center gap-1 flex-wrap subpixel-antialiased'>
+        <p className='font-bold name text-sm'>{pagedata.first_name}</p>
+        <p className='font-bold name text-sm'>{pagedata.middle_name}</p>
+        <p className='font-bold name text-sm'>{pagedata.last_name}</p>
       </div>
-      <div className='text-center font-semibold text-xs text-gray-700'>
+      <div className='text-center email font-semibold text-xs text-gray-700'>
         Email: {pagedata.email}
       </div>
-      <div className='text-center font-semibold text-xs text-gray-700'>
+      <div className='text-center email font-semibold text-xs text-gray-700'>
         Index Number: {pagedata.index_number}
       </div>
       <div className='flex flex-col items-center divide-y divide-gray-600 gap-2'>
-        <Link to='/result'>Results</Link>
-        <Link to='/messages'>Messages</Link>
-        <Link to='/'>Anouncements</Link>
+        <Link className='nav' to='/result'>
+          Results
+        </Link>
+        <Link className='nav' to='/messages'>
+          Messages
+        </Link>
+        <Link className='nav' to='/'>
+          Anouncements
+        </Link>
       </div>
     </div>
   );

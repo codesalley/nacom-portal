@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
 import { useAuthContext } from '../context/AuthContext';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 
 const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
@@ -20,7 +20,40 @@ const NavBar = ({ data }) => {
 
   return (
     <div className='flex justify-between bg-white h-20 m-0'>
-      <button onClick={toggledState} className='p-2'>
+      <div className='hidden lg:flex self-center gap-2 px-2'>
+        <NavLink
+          exact
+          to='/'
+          activeStyle={{
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+          }}
+          className='font-semibold text-base text-gray-500'
+        >
+          Announcements
+        </NavLink>
+        <NavLink
+          to='/messages'
+          className='font-semibold text-base text-gray-500'
+          activeStyle={{
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+          }}
+        >
+          Messages
+        </NavLink>
+        <NavLink
+          to='/result'
+          className='font-semibold text-base text-gray-500'
+          activeStyle={{
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+          }}
+        >
+          Results
+        </NavLink>
+      </div>
+      <button onClick={toggledState} className='p-2 lg:hidden'>
         {' '}
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -48,7 +81,7 @@ const NavBar = ({ data }) => {
           <Sidebar data={toggledState} />
         </div>
       )}
-      <div className='p-2 font-semibold text-base text-gray-500 self-center'>
+      <div className='p-2 font-semibold text-base text-gray-500 self-center lg:hidden'>
         {data}
       </div>
       <button onClick={logout} className='p-2 font-semibold text-gray-600'>

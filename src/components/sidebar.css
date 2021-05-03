@@ -1,0 +1,13 @@
+.name {
+  width: inherit;
+  font-size: 10px;
+  overflow: scroll;
+}
+
+.email {
+  font-size: 8px;
+}
+
+.nav {
+  font-size: 10px;
+}
