@@ -9,7 +9,6 @@ const ModalData = ({ data }) => {
   const url = 'https://nacomtest.herokuapp.com/me';
   const [pageData, setPageData] = useState();
   const [loading, setLoading] = useState(true);
-  console.log(data);
 
   async function getMe() {
     const data = await auth(url);

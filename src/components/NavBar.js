@@ -9,7 +9,6 @@ const NavBar = ({ data }) => {
   const history = useHistory();
 
   function toggledState() {
-    console.log(student);
     setToggledNav((e) => !e);
   }
 
