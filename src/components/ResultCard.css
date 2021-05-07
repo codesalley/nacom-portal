@@ -1,0 +1,19 @@
+.main-card {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-btn:hover {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: ease-in-out 200ms;
+  outline: none;
+}
+
+.show-btn:active,
+.show-btn:focus {
+  outline: none;
+}

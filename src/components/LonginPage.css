@@ -1,7 +1,61 @@
 .main-logo {
   width: 200px;
 }
-
+.main-page {
+  position: relative;
+}
 .nurse-right {
   border-radius: 200px;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  position: absolute;
+  z-index: 10;
+  opacity: 0.8;
+  display: grid;
+  place-content: center;
+}
+
+.loader-circle {
+  width: 50px;
+  height: 50px;
+  border: 3px dotted black;
+  border-radius: 50%;
+  position: relative;
+  animation: main-turn 2700ms infinite;
+}
+.loader-circle::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 3px dotted black;
+  border-radius: 50%;
+  animation: turnme 1700ms linear infinite;
+  transform-origin: left;
+}
+.loader-circle::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 3px dotted black;
+  border-radius: 50%;
+  animation: turnme 1500ms linear infinite;
+  transform-origin: top;
+}
+
+@keyframes turnme {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes main-turn {
+  0% {
+    transform: rotate(360deg);
+  }
 }

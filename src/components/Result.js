@@ -12,6 +12,7 @@ const Result = ({ data }) => {
 
   const getResults = async () => {
     const data = await auth(url);
+    console.log(data);
     setPageData(data);
     setLoading(false);
   };
