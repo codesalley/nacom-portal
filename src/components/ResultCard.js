@@ -10,9 +10,9 @@ const ResultCard = ({ data }) => {
   const elementsFrag = data.map((v, i) => (
     <div
       key={i}
-      className='main-card flex gap-3 bg-white rounded p-5 mx-auto mt-3 max-w-md'
+      className='main-card flex gap-3 bg-white rounded p-5 mx-auto mt-3 max-w-md '
     >
-      <Modal isOpen={ismodal}>
+      <Modal isOpen={ismodal} className=''>
         <div>
           {' '}
           <button onClick={() => setModal((e) => !e)}>

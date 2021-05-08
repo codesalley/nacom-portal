@@ -18,8 +18,8 @@ const NavBar = ({ data }) => {
   }
 
   return (
-    <div className='flex justify-between bg-white h-20 m-0'>
-      <div className='hidden lg:flex self-center gap-2 px-2'>
+    <div className='flex  justify-between bg-blue-600 text-white h-20 m-0 px-1 md:px-20 '>
+      <div className='hidden md:flex self-center gap-2 '>
         <NavLink
           exact
           to='/'
@@ -52,11 +52,11 @@ const NavBar = ({ data }) => {
           Results
         </NavLink>
       </div>
-      <button onClick={toggledState} className='p-2 lg:hidden'>
+      <button onClick={toggledState} className='p-2 md:hidden'>
         {' '}
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6'
+          className='h-6 w-6 '
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
@@ -71,19 +71,19 @@ const NavBar = ({ data }) => {
       </button>
       {!toggledNav ? (
         <div
-          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform -translate-x-full transition duration-700 ease-in-out m-0`}
+          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-1/2 transform -translate-x-full transition duration-700 ease-in-out m-0`}
         ></div>
       ) : (
         <div
-          className={`hamburger bg-gray-50 h-screen absolute w-1/2 transform transition duration-700 ease-in-out m-0`}
+          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-1/2 transform transition duration-700 ease-in-out m-0`}
         >
           <Sidebar data={toggledState} />
         </div>
       )}
-      <div className='p-2 font-semibold text-base text-gray-500 self-center lg:hidden'>
+      <div className='p-2 font-semibold text-base text-white self-center md:hidden'>
         {data}
       </div>
-      <button onClick={logout} className='p-2 font-semibold text-gray-600'>
+      <button onClick={logout} className='p-2 text-white font-semibold '>
         Logout
       </button>
     </div>

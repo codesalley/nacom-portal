@@ -21,7 +21,7 @@ export default function Sidebar({ data }) {
   }, []);
 
   return loading ? (
-    <div className=''>
+    <div className='md:hidden'>
       <div className='flex justify-between px-3'>
         <p></p>
         <button onClick={data} className='text-right p-2'>
@@ -54,7 +54,7 @@ export default function Sidebar({ data }) {
       </div>
     </div>
   ) : (
-    <div className='transition duration-700 ease-in-out px-2 flex flex-col absolute h-full overflow-hidden gap-1'>
+    <div className='transition md:hidden duration-700 ease-in-out px-2 flex flex-col absolute h-full overflow-hidden gap-1'>
       <div className='flex justify-between px-3'>
         <p></p>
         <button onClick={data} className='text-right p-2 '>

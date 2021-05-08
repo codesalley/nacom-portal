@@ -11,6 +11,7 @@ const Message = ({ data }) => {
   const getMessages = async () => {
     const data = await auth(url);
     setPagedata(data);
+    console.log(data);
     setLoading(false);
   };
 
@@ -25,7 +26,7 @@ const Message = ({ data }) => {
     <div>
       {data}
       {loading ? (
-        <div className='bg-gray-200 pt-2'>
+        <div className='bg-gray-200 pt-2 h-screen'>
           {' '}
           <Skenton />
           <Skenton />

@@ -21,13 +21,13 @@ const ModalData = ({ data }) => {
   }, []);
 
   return loading ? (
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
       <Skenton />
       <Skenton />
       <Skenton />
     </div>
   ) : pageData && !pageData.msg ? (
-    <div className='flex-col flex gap-3 divide-y-2  mx-auto w-2/3 '>
+    <div className='flex-col flex gap-3 divide-y-2  mx-auto max-w-sm'>
       <h2 className='text-center text-xl font-bold p-5 text-gray-500'>
         {' '}
         Result Slip{' '}
