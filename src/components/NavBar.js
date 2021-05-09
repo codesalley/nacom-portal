@@ -18,35 +18,32 @@ const NavBar = ({ data }) => {
   }
 
   return (
-    <div className='flex  justify-between bg-blue-600 text-white h-20 m-0 px-1 md:px-20 '>
-      <div className='hidden md:flex self-center gap-2 '>
+    <div className='flex  justify-between bg-blue-600 text-white transform duration-700 ease-in-out h-20 m-0 md:px-20 '>
+      <div className='hidden md:flex text-white self-center gap-2 '>
         <NavLink
           exact
           to='/'
           activeStyle={{
-            fontWeight: 'bold',
-            textDecoration: 'underline',
+            backgroundColor: '#60A5FA',
           }}
-          className='font-semibold text-base text-gray-500'
+          className='font-semibold transform transition hover:bg-blue-400 duration-700 ease-in-out text-base text-gray-600 md:text-white rounded  px-3 py-2'
         >
           Announcements
         </NavLink>
         <NavLink
           to='/messages'
-          className='font-semibold text-base text-gray-500'
+          className='font-semibold text-base transform transition hover:bg-blue-400 duration-700 ease-in-out text-gray-600 md:text-white  rounded  px-3 py-2'
           activeStyle={{
-            fontWeight: 'bold',
-            textDecoration: 'underline',
+            backgroundColor: '#60A5FA',
           }}
         >
           Messages
         </NavLink>
         <NavLink
           to='/result'
-          className='font-semibold text-base text-gray-500'
+          className='font-semibold text-base transform transition hover:bg-blue-400 duration-700 ease-in-out text-gray-600 md:text-white  px-3 py-2 rounded'
           activeStyle={{
-            fontWeight: 'bold',
-            textDecoration: 'underline',
+            backgroundColor: '#60A5FA',
           }}
         >
           Results
@@ -83,7 +80,10 @@ const NavBar = ({ data }) => {
       <div className='p-2 font-semibold text-base text-white self-center md:hidden'>
         {data}
       </div>
-      <button onClick={logout} className='p-2 text-white font-semibold '>
+      <button
+        onClick={logout}
+        className='p-2 text-white font-semibold transform transition '
+      >
         Logout
       </button>
     </div>

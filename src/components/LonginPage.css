@@ -1,5 +1,7 @@
 .main-logo {
   width: 200px;
+
+  animation: logofall 900ms linear;
 }
 .main-page {
   position: relative;
@@ -17,7 +19,6 @@
   opacity: 0.7;
   display: grid;
   place-content: center;
-  animation: loader 1900ms linear infinite;
 }
 
 .loader-circle {
@@ -61,14 +62,20 @@
   }
 }
 
-@keyframes loader {
+@keyframes logofall {
   0% {
     opacity: 0.5;
+    transform: scale(0.5);
   }
   50% {
     opacity: 0.8;
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(1.2);
   }
   100% {
-    opacity: 0.6;
+    opacity: 1;
+    transform: scale(1);
   }
 }

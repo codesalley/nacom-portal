@@ -45,8 +45,8 @@ export default function LoginPage() {
           <div className='loader-circle'></div>
         </div>
       ) : null}
-      <div className='main-page bg-gray-600 lg:flex overflow-scroll'>
-        <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg p-2 nurse-right'>
+      <div className='main-page bg-white lg:flex overflow-scroll'>
+        <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg  nurse-right'>
           <img
             src={nurseimg}
             alt='left'
@@ -63,7 +63,7 @@ export default function LoginPage() {
             </p>
             <form className='form flex flex-col gap-4' onSubmit={submitHandler}>
               <div className='index-number flex flex-col'>
-                <label className='text-xl text-green-50 font-bold '>
+                <label className='text-xl text-gray-600 font-bold '>
                   Index Number{' '}
                 </label>
 
@@ -72,10 +72,11 @@ export default function LoginPage() {
                   className='index-number-input border rounded p-2 focus:ring ring-green-600  focus:outline-none transition-color duration-200'
                   ref={indext_number}
                   placeholder='Index Number eg: A323F'
+                  autoFocus={true}
                 />
               </div>
               <div className='password flex flex-col'>
-                <label className='text-xl text-green-50 font-bold'>
+                <label className='text-xl text-gray-600 font-bold'>
                   Password{' '}
                 </label>
                 <input

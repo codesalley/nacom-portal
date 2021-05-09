@@ -91,13 +91,13 @@ export default function Sidebar({ data }) {
         Index Number: {pagedata.index_number}
       </div>
       <div className='flex flex-col items-center divide-y divide-gray-600 gap-2'>
-        <Link className='nav' to='/result'>
+        <Link className='nav text-gray-600' to='/result'>
           Results
         </Link>
-        <Link className='nav' to='/messages'>
+        <Link className='nav text-gray-600' to='/messages'>
           Messages
         </Link>
-        <Link className='nav' to='/'>
+        <Link className='nav text-gray-600' to='/'>
           Anouncements
         </Link>
       </div>
