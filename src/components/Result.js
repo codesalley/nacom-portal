@@ -25,15 +25,19 @@ const Result = ({ data }) => {
       {data}
       {loading ? (
         <div className='bg-gray-200 main-page-height pt-2'>
-          <Skenton />
-          <Skenton />
-          <Skenton />
-          <Skenton />
-          <Skenton />
+          <div className='max-w-3xl mx-auto h-full border-r-2 border-double border-l-2 border-gray-400 shadow-lg'>
+            <Skenton />
+            <Skenton />
+            <Skenton />
+            <Skenton />
+            <Skenton />
+          </div>
         </div>
       ) : pageData && !pageData.msg ? (
         <div className='bg-gray-200 main-page-height pt-2'>
-          <ResultCard data={pageData} />
+          <div className='max-w-3xl mx-auto h-full border-r-2 border-double border-l-2 border-gray-400 shadow-lg'>
+            <ResultCard data={pageData} />
+          </div>
         </div>
       ) : (
         <Redirect to='/login' />

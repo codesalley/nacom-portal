@@ -100,12 +100,13 @@ export default function Sidebar({ data }) {
       </div>
       <div className='flex flex-col items-center  gap-2'>
         <NavLink
-          className='nav flex self-start items-center gap-5  text-gray-50 px-3 py-2 rounded-lg w-full'
+          className='nav  flex self-start items-center gap-5  text-gray-50 px-3 py-2 rounded-lg w-full'
           exact
           to='/'
           activeStyle={{
             backgroundColor: '#60A5FA',
           }}
+          activeClassName='active-link'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -122,6 +123,7 @@ export default function Sidebar({ data }) {
         <NavLink
           className='nav  px-3 py-2 rounded-lg w-full flex self-start items-center gap-5  text-gray-50'
           to='/messages'
+          activeClassName='active-link'
           activeStyle={{
             backgroundColor: '#60A5FA',
           }}
@@ -141,6 +143,7 @@ export default function Sidebar({ data }) {
         <NavLink
           className='nav  px-3 py-2 rounded-lg w-full flex self-start items-center gap-5  text-gray-50'
           to='/result'
+          activeClassName='active-link'
           activeStyle={{
             backgroundColor: '#60A5FA',
           }}
@@ -158,7 +161,7 @@ export default function Sidebar({ data }) {
           <h2 className='text-lg'> Results</h2>
         </NavLink>
       </div>
-      <div className='absolute bottom-5'>
+      <div className='absolute bottom-2'>
         {' '}
         <p> Contact Adminstration</p> <small>Example@email.com</small>
       </div>

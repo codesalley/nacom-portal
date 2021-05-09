@@ -34,8 +34,10 @@ const Announcements = ({ data }) => {
           <Skenton />
         </div>
       ) : pageData && !pageData.msg ? (
-        <div className='bg-gray-200  overflow-scroll main-page-height '>
-          <Card data={pageData} />
+        <div className='bg-gray-200   overflow-scroll main-page-height '>
+          <div className='max-w-3xl mx-auto h-full border-r-2 border-double border-l-2 border-gray-400 shadow-lg'>
+            <Card data={pageData} />
+          </div>
         </div>
       ) : (
         <Redirect to='/login' />

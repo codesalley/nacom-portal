@@ -12,7 +12,6 @@ const Message = ({ data }) => {
   const getMessages = async () => {
     const data = await auth(url);
     setPagedata(data);
-    console.log(data);
     setLoading(false);
   };
 
@@ -28,16 +27,20 @@ const Message = ({ data }) => {
       {data}
       {loading ? (
         <div className='bg-gray-200 pt-2 main-page-height'>
-          {' '}
-          <Skenton />
-          <Skenton />
-          <Skenton />
-          <Skenton />
-          <Skenton />
+          <div className='max-w-3xl mx-auto h-full border-r-2 border-double border-l-2 border-gray-400 shadow-lg'>
+            {' '}
+            <Skenton />
+            <Skenton />
+            <Skenton />
+            <Skenton />
+            <Skenton />
+          </div>
         </div>
       ) : !pageData.msg ? (
         <div className='bg-gray-200 main-page-height pt-2'>
-          <Card data={pageData} />
+          <div className='max-w-3xl mx-auto h-full border-r-2 border-double border-l-2 border-gray-400 shadow-lg'>
+            <Card data={pageData} />
+          </div>
         </div>
       ) : (
         <Redirect to='login' />

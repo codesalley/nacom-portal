@@ -17,3 +17,7 @@
 .show-btn:focus {
   outline: none;
 }
+
+.main-page-height {
+  height: calc(100vh - 5rem);
+}

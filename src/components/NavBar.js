@@ -2,11 +2,13 @@ import { useState } from 'react';
 import Sidebar from './Sidebar';
 import { useHistory, NavLink } from 'react-router-dom';
 import './NavBar.css';
+import { useAuthContext } from '../context/AuthContext';
 
 const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
   const history = useHistory();
-
+  const { student } = useAuthContext();
+  console.log(student);
   function toggledState() {
     setToggledNav((e) => !e);
   }
@@ -79,12 +81,18 @@ const NavBar = ({ data }) => {
       <div className='p-2 font-semibold text-base text-white self-center md:hidden'>
         {data}
       </div>
-      <button
-        onClick={logout}
-        className='p-2 text-white font-semibold transform transition '
-      >
-        Logout
-      </button>
+      <div className='p-2 self-center flex gap-2 '>
+        <div className='profile flex content-center gap-2'>
+          <p className='font-semibold self-center'>
+            {' '}
+            {student.first_name} {student.last_name}{' '}
+          </p>
+          <span className='text-gray-300 text-2xl font-extralight'>|</span>
+        </div>
+        <button className='text-white font-semibold ' onClick={logout}>
+          Logout
+        </button>
+      </div>
     </div>
   );
 };

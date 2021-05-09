@@ -45,8 +45,8 @@ export default function LoginPage() {
           <div className='loader-circle'></div>
         </div>
       ) : null}
-      <div className='main-page bg-white lg:flex overflow-scroll'>
-        <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg  nurse-right'>
+      <div className='main-page bg-gray-100 bg-opacity-70 lg:flex overflow-scroll'>
+        <div className='hidden lg:block w-2/4 h-screen lg:rounded-lg  nurse-right drop-shadow-xl shadow-lg'>
           <img
             src={nurseimg}
             alt='left'
@@ -54,7 +54,7 @@ export default function LoginPage() {
           />
         </div>
         <div className='w-2/3 mx-auto h-screen flex flex-col gap-2 pt-10 lg:w-2/4 lg:py-40'>
-          <img src={Logo} alt='main-logo' className='main-logo  mx-auto' />
+          <img src={Logo} alt='main-logo' className='main-logo  mx-auto ' />
 
           <div className='form-div lg:w-2/4 lg:mx-auto'>
             <p className='form-error text-center text-red-200 border-gray-100 p-2 rounded transform transition-all duration-700'>
