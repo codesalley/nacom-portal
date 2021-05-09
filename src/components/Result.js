@@ -24,7 +24,7 @@ const Result = ({ data }) => {
     <div>
       {data}
       {loading ? (
-        <div className='bg-gray-200 h-screen pt-2'>
+        <div className='bg-gray-200 main-page-height pt-2'>
           <Skenton />
           <Skenton />
           <Skenton />
@@ -32,7 +32,7 @@ const Result = ({ data }) => {
           <Skenton />
         </div>
       ) : pageData && !pageData.msg ? (
-        <div className='bg-gray-200 h-screen pt-2'>
+        <div className='bg-gray-200 main-page-height pt-2'>
           <ResultCard data={pageData} />
         </div>
       ) : (

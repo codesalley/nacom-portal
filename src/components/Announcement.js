@@ -25,7 +25,7 @@ const Announcements = ({ data }) => {
     <div className='bg-white '>
       {data}
       {loading ? (
-        <div className='flex flex-col bg-gray-200 h-screen'>
+        <div className='flex flex-col bg-gray-200 main-page-height'>
           <Skenton />
           <Skenton />
           <Skenton />
@@ -34,7 +34,7 @@ const Announcements = ({ data }) => {
           <Skenton />
         </div>
       ) : pageData && !pageData.msg ? (
-        <div className='bg-gray-200 h-screen overflow-scroll '>
+        <div className='bg-gray-200  overflow-scroll main-page-height '>
           <Card data={pageData} />
         </div>
       ) : (

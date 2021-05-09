@@ -3,6 +3,7 @@ import auth from '../utils/auth';
 import Skenton from './skenton';
 import Card from './Card';
 import { Redirect } from 'react-router-dom';
+import './Messages.css';
 
 const Message = ({ data }) => {
   const [pageData, setPagedata] = useState();
@@ -26,7 +27,7 @@ const Message = ({ data }) => {
     <div>
       {data}
       {loading ? (
-        <div className='bg-gray-200 pt-2 h-screen'>
+        <div className='bg-gray-200 pt-2 main-page-height'>
           {' '}
           <Skenton />
           <Skenton />
@@ -35,7 +36,7 @@ const Message = ({ data }) => {
           <Skenton />
         </div>
       ) : !pageData.msg ? (
-        <div className='bg-gray-200 h-screen pt-2'>
+        <div className='bg-gray-200 main-page-height pt-2'>
           <Card data={pageData} />
         </div>
       ) : (

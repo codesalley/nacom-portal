@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
-import { useAuthContext } from '../context/AuthContext';
 import { useHistory, NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 const NavBar = ({ data }) => {
   const [toggledNav, setToggledNav] = useState(false);
-  const { student } = useAuthContext();
   const history = useHistory();
 
   function toggledState() {
@@ -18,7 +17,7 @@ const NavBar = ({ data }) => {
   }
 
   return (
-    <div className='flex  justify-between bg-blue-600 text-white transform duration-700 ease-in-out h-20 m-0 md:px-20 '>
+    <div className='flex  justify-between bg-blue-600 text-white transform duration-700 ease-in-out nav-height m-0 md:px-20 '>
       <div className='hidden md:flex text-white self-center gap-2 '>
         <NavLink
           exact
@@ -68,11 +67,11 @@ const NavBar = ({ data }) => {
       </button>
       {!toggledNav ? (
         <div
-          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-1/2 transform -translate-x-full transition duration-700 ease-in-out m-0`}
+          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-3/4 transform -translate-x-full transition duration-700 ease-in-out m-0`}
         ></div>
       ) : (
         <div
-          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-1/2 transform transition duration-700 ease-in-out m-0`}
+          className={`hamburger md:hidden bg-gray-50 h-screen absolute w-3/4 transform transition duration-700 ease-in-out m-0`}
         >
           <Sidebar data={toggledState} />
         </div>

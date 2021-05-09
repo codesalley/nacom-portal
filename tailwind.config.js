@@ -3,6 +3,7 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {},
+    h: '20rem',
   },
   variants: {
     extend: {},
