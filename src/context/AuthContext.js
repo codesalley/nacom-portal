@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
     }
     const profiledata = await auth('https://nacomtest.herokuapp.com/me');
 
-    setStudent(profiledata);
+    setStudent(await profiledata);
     return profiledata;
   }
 

@@ -1,4 +1,3 @@
-import nurse from '../assets/pngegg.png';
 import { Redirect } from 'react-router-dom';
 import MessageSvg from '../assets/message.svg';
 import './Card.css';
